@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI YouTube Thumbnail Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Thumbnail Generator</h1>
+            <p>Describe your vision, generate a stunning YouTube thumbnail instantly.</p>
+        </header>
+        
+        <main>
+            <div class="generator-card">
+                <div class="input-group">
+                    <label for="promptInput">Prompt</label>
+                    <textarea id="promptInput" placeholder="e.g. A dramatic gaming montage thumbnail, dark background, neon text, explosion in the background, 8k, professional" rows="3"></textarea>
+                    <div class="suggestions">
+                        <span>Quick Ideas:</span>
+                        <button class="chip" data-prompt="A futuristic tech review thumbnail, cyberpunk city, glowing blue circuits">Tech Review</button>
+                        <button class="chip" data-prompt="Funny cat video thumbnail, surprised cat, colorful confetti">Funny Cat</button>
+                        <button class="chip" data-prompt="Cooking channel thumbnail, delicious pasta, steam, rustic table">Cooking</button>
+                    </div>
+                </div>
+                
+                <button id="generateBtn" class="btn-primary">
+                    <span class="btn-text">Generate Thumbnail</span>
+                    <span class="btn-loader" id="loader"></span>
+                </button>
+            </div>
+
+            <div class="result-container" id="resultContainer">
+                <div class="image-wrapper" id="imageWrapper">
+                    <img id="resultImage" src="" alt="Generated Thumbnail" style="display: none;">
+                    <div id="placeholder" class="placeholder">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M21 15l-6-6L9 21"/></svg>
+                        <p>Your generated thumbnail will appear here</p>
+                    </div>
+                </div>
+                <div class="actions" id="actions">
+                    <a id="downloadBtn" class="btn-secondary" href="#" download target="_blank" hidden>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download Image
+                    </a>
+                    <button id="newPromptBtn" class="btn-secondary" hidden>
+                        New Prompt
+                    </button>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Powered by Pollinations.ai | <a href="https://pollinations.ai" target="_blank">About</a></p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
